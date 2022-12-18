@@ -1,4 +1,4 @@
-require_relative 'spec_helper.rb'
+require_relative "spec_helper.rb"
 
 describe Song do
   before(:each) do
@@ -16,13 +16,13 @@ describe Song do
     expect(song.name).to eq("Jump Around")
   end
 
-  it 'converts its name to a url friendly parameter' do
+  it "converts its name to a url friendly parameter" do
     song.name = "Jump Around"
     expect(song.to_param).to eq("jump-around")
   end
 
   it "has an artist" do
-    song.artist = Artist.new.tap {|a| a.name = "miley"}
+    song.artist = Artist.new.tap { |a| a.name = "miley" }
     expect(song.artist).to be_a(Artist)
     expect(song.artist.name).to eq("miley")
   end
@@ -46,5 +46,4 @@ describe Song do
       expect(Song.count).to eq(0)
     end
   end
-
 end
